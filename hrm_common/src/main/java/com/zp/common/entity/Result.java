@@ -15,22 +15,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 // 非空数据不显示
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Result {
+public class Result<T> {
     private boolean success; //是否成功
     private Integer code; // 返回码
     private String message; // 返回信息
-    private Object data; // 返回数据
+    private T data; // 返回数据
 
     public Result(ResultCode code) {
-        this.success = code.success();
-        this.code = code.code();
-        this.message = code.message();
+        this.success = code.success;
+        this.code = code.getCode();
+        this.message = code.getMessage();
     }
 
-    public Result(ResultCode code, Object data) {
-        this.success = code.success();
-        this.code = code.code();
-        this.message = code.message();
+    public Result(ResultCode code, T data) {
+        this.success = code.success;
+        this.code = code.getCode();
+        this.message = code.getMessage();
         this.data = data;
     }
 

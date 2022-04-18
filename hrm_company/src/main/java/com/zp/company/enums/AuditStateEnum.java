@@ -8,39 +8,34 @@ import lombok.Data;
  * @author zhengpanone
  * @since 2022-03-29
  */
-public enum AuditStateEnum {
+public enum AuditStateEnum implements NameValueEnum<String> {
     // 未审核
-    UN_AUDIT_STATE("0", "未审核", "unAuditState"),
+    UN_AUDIT_STATE("0", "未审核"),
     // 已审核
-    AUDIT_STATE("1", "已审核", "autditState");
+    AUDIT_STATE("1", "已审核");
     /**
      * 保存在数据库中的值
      */
-    private String code;
+    private final String value;
     /**
      * 一般页面显示的内容
      */
-    private String name;
-    /**
-     * 一般页面显示的英文内容
-     */
-    private String enName;
+    private final String name;
 
-    AuditStateEnum(String code, String name, String enName) {
-        this.code = code;
+
+    AuditStateEnum(String value, String name) {
+        this.value = value;
         this.name = name;
-        this.enName = enName;
     }
 
-    public String getCode() {
-        return code;
+    @Override
+    public String getValue() {
+        return value;
     }
 
-    public String getName(){
+    @Override
+    public String getName() {
         return name;
-    }
-    public String getEnName(){
-        return enName;
     }
 
 }

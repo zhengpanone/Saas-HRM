@@ -29,6 +29,17 @@
             <artifactId>hrm_common_model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+
+        <!--swagger-ui-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
 
     </dependencies>
 

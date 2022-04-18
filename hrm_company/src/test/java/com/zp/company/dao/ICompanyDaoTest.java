@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @Author: zhengpanone
@@ -27,5 +28,12 @@ public class ICompanyDaoTest {
         List<Company> all = companyDao.findAll();
         System.out.println(all);
 
+    }
+
+    @Test
+    public void testFindById() {
+        Optional<Company> byId = companyDao.findById("1");
+        Company company = byId.get();
+        System.out.println(company);
     }
 }

@@ -17,3 +17,6 @@ spring:
     database: mysql
     show-sql: true
     open-in-view: true
+springfox:
+  swagger2:
+    enabled: true

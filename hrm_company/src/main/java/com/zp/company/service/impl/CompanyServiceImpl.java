@@ -36,7 +36,7 @@ public class CompanyServiceImpl implements ICompanyService {
     public void save(Company company) {
         String id = idWorker.nextId() + "";
         company.setId(id);
-        company.setAuditState(AuditStateEnum.UN_AUDIT_STATE.getCode()); // 0: 未审核, 1: 已审核
+        company.setAuditState(AuditStateEnum.UN_AUDIT_STATE.getValue()); // 0: 未审核, 1: 已审核
         company.setState(0); // 0: 未激活, 1: 已激活
         companyDao.save(company);
     }

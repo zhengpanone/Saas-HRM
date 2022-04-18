@@ -2,6 +2,8 @@ package com.zp.common.entity;
 
 //import org.springframework.http.HttpStatus;
 
+import lombok.Getter;
+
 /**
  * @Author: zhengpanone
  * @Description:
@@ -13,6 +15,7 @@ package com.zp.common.entity;
  *  失败：10001
  *  未登录：10002
  */
+@Getter
 public enum ResultCode {
     // 系统错误返回码
 /*    SUCCESS(HttpStatus.OK, HttpStatus.OK.value(), "OK"),
@@ -50,15 +53,4 @@ public enum ResultCode {
         this.message = message;
     }
 
-    public boolean success() {
-        return success;
-    }
-
-    public Integer code() {
-        return code;
-    }
-
-    public String message() {
-        return message;
-    }
 }
